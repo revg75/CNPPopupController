@@ -38,6 +38,7 @@ static inline UIViewAnimationOptions UIViewAnimationCurveToAnimationOptions(UIVi
         self.popupView = [[UIView alloc] initWithFrame:CGRectZero];
         self.popupView.backgroundColor = [UIColor whiteColor];
         self.popupView.clipsToBounds = YES;
+        bgview.tag = 999;
         [self.popupView addSubview:bgview];
         
         self.maskView = [[UIView alloc] initWithFrame:self.applicationWindow.bounds];
@@ -162,7 +163,7 @@ CGFloat UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orientat
     for (UIView *view in self.popupView.subviews)
     {
         view.autoresizingMask = UIViewAutoresizingNone;
-        if (!view.hidden)
+        if (!view.hidden && view.tag!=000)
         {
             CGSize _size = view.frame.size;
             if (CGSizeEqualToSize(_size, CGSizeZero))
