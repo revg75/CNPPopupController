@@ -29,7 +29,7 @@ static inline UIViewAnimationOptions UIViewAnimationCurveToAnimationOptions(UIVi
 
 @implementation CNPPopupController
 
-- (instancetype)initWithContents:(NSArray *)contents {
+- (instancetype)initWithContents:(NSArray *)contents andBackgroundView:(UIView *)bgview{
     self = [super init];
     if (self) {
         
@@ -38,6 +38,7 @@ static inline UIViewAnimationOptions UIViewAnimationCurveToAnimationOptions(UIVi
         self.popupView = [[UIView alloc] initWithFrame:CGRectZero];
         self.popupView.backgroundColor = [UIColor whiteColor];
         self.popupView.clipsToBounds = YES;
+        [self.popupView addSubview:bgview];
         
         self.maskView = [[UIView alloc] initWithFrame:self.applicationWindow.bounds];
         self.maskView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];

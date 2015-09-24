@@ -16,7 +16,7 @@
 @property (nonatomic, strong) CNPPopupTheme *theme;
 @property (nonatomic, weak) id <CNPPopupControllerDelegate> delegate;
 
-- (instancetype)initWithContents:(NSArray *)contents;
+- (instancetype)initWithContents:(NSArray *)contents andBackgroundView:(UIView*)bgview;
 
 - (void)presentPopupControllerAnimated:(BOOL)flag;
 - (void)dismissPopupControllerAnimated:(BOOL)flag;
