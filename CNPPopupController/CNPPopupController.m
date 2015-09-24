@@ -163,7 +163,7 @@ CGFloat UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orientat
     for (UIView *view in self.popupView.subviews)
     {
         view.autoresizingMask = UIViewAutoresizingNone;
-        if (!view.hidden && view.tag!=000)
+        if (!view.hidden && view.tag!=999)
         {
             CGSize _size = view.frame.size;
             if (CGSizeEqualToSize(_size, CGSizeZero))
