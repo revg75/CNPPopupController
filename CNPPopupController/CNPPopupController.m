@@ -38,14 +38,15 @@ static inline UIViewAnimationOptions UIViewAnimationCurveToAnimationOptions(UIVi
         self.popupView = [[UIView alloc] initWithFrame:CGRectZero];
         self.popupView.backgroundColor = [UIColor whiteColor];
         self.popupView.clipsToBounds = YES;
-        bgview.tag = 999;
-        [self.popupView addSubview:bgview];
+        
         
         self.maskView = [[UIView alloc] initWithFrame:self.applicationWindow.bounds];
         self.maskView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
         self.backgroundTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBackgroundTapGesture:)];
         self.backgroundTapRecognizer.delegate = self;
         [self.maskView addGestureRecognizer:self.backgroundTapRecognizer];
+        bgview.tag = 999;
+        [self.maskView addSubview:bgview];
         [self.maskView addSubview:self.popupView];
         
         self.theme = [CNPPopupTheme defaultTheme];
